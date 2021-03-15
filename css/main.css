@@ -1,0 +1,27 @@
+#choice{
+    background-color:red;
+    height:200px;
+}
+#log{
+    background-color:red;
+    height:250px;
+}
+#art{
+    background-color:red;
+    height:350px;
+}
+#items{
+    background-color:red;
+    height:100px;
+}
+
+.bg_gray{
+    background-color:gainsboro;
+}
+.damage{
+    color: white;
+}
+
+#log{
+    overflow: scroll;
+}
