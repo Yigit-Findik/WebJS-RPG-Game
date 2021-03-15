@@ -21,7 +21,6 @@ function pTagGenerator(content, klasse, choice, logChoice){
 }
 
 
-
 //!imgGenerator functie
 function imgGenerator(source){
     const imgt = document.createElement("img");
@@ -29,6 +28,7 @@ function imgGenerator(source){
     imgt.setAttribute("src", source);
     return imgt;
 }
+
 
 //!als game word gestart
 function startGame() {
