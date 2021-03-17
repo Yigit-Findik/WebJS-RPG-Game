@@ -6,17 +6,17 @@ const logElement = document.getElementById("art");
 function pTagGenerator(content, klasse, choice, logChoice){
     if(logChoice = "log"){
         const pTag = document.createElement("p");
-    pTag.textContent = content;
-    pTag.setAttribute("class", klasse);
-    return pTag;
+        pTag.textContent = content;
+        pTag.setAttribute("class", klasse);
+        return pTag;
     }
 
     else if(logChoice = "choice"){
         const pTag = document.createElement("p");
-    pTag.textContent = content;
-    pTag.setAttribute("class", klasse);
-    pTag.setAttribute('onClick', choice);
-    return pTag;
+        pTag.textContent = content;
+        pTag.setAttribute("class", klasse);
+        pTag.setAttribute('onClick', choice);
+        return pTag;
     }
 }
 
