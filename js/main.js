@@ -2,7 +2,7 @@ const choiceElement = document.getElementById("choice");
 const logElement = document.getElementById("log");
 const logElement = document.getElementById("art");
 
-//!Paragraph tag generator
+//?Paragraph tag generator
 function pTagGenerator(content, klasse, choice, logChoice){
     if(logChoice = "log"){
         const pTag = document.createElement("p");
@@ -21,7 +21,7 @@ function pTagGenerator(content, klasse, choice, logChoice){
 }
 
 
-//!imgGenerator functie
+//?imgGenerator functie
 function imgGenerator(source){
     const imgt = document.createElement("img");
     imgt.setAttribute("class",klasse);
@@ -30,7 +30,7 @@ function imgGenerator(source){
 }
 
 
-//!als game word gestart
+//?als game word gestart
 function startGame() {
     logElement.innerHTML = "Greetings Adventurer! What is your name?"
     choiceElement.appendChild(pTagGenerator("Yes!", "damage", "choiceYes1()", "choice"));
@@ -38,7 +38,7 @@ function startGame() {
 }
 
 
-//!choice ja
+//?choice ja
 function choiceYes1() {
     choiceElement.innerHTML = "";
     logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
