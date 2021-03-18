@@ -1,17 +1,26 @@
-const choiceElement = document.getElementById("choice");
-const logElement = document.getElementById("log");
-const logElement = document.getElementById("art");
+var choiceElement = document.getElementById("choice");
+var logElement = document.getElementById("log");
+var ArtElement = document.getElementById("art");
 
-//?Paragraph tag generator
+//Onload startgame
+function startGame() {
+
+    logElement.innerHTML = "Greetings Adventurer! What is your name?";
+    choiceElement.appendChild(pTagGenerator("Yes!", "damage", "choiceYes1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("No!", "damage", "choiceNo1()", "choice"));
+}
+
+//Paragraph tag generator
 function pTagGenerator(content, klasse, choice, logChoice){
-    if(logChoice = "log"){
+    //var pTag = <p class="damage" onclick="choiceYes1()">Yes!</p>
+    if(logChoice == "log"){
         const pTag = document.createElement("p");
         pTag.textContent = content;
         pTag.setAttribute("class", klasse);
         return pTag;
     }
 
-    else if(logChoice = "choice"){
+    else if(logChoice == "choice"){
         const pTag = document.createElement("p");
         pTag.textContent = content;
         pTag.setAttribute("class", klasse);
@@ -21,27 +30,36 @@ function pTagGenerator(content, klasse, choice, logChoice){
 }
 
 
-//?imgGenerator functie
-function imgGenerator(source){
+//imgGenerator functie
+function imgGenerator(source, klasse){
     const imgt = document.createElement("img");
-    imgt.setAttribute("class",klasse);
-    imgt.setAttribute("src", source);
+    imgt.setAttribute("class",source);
+    imgt.setAttribute("src", klasse);
     return imgt;
 }
-
-
-//?als game word gestart
-function startGame() {
-    logElement.innerHTML = "Greetings Adventurer! What is your name?"
-    choiceElement.appendChild(pTagGenerator("Yes!", "damage", "choiceYes1()", "choice"));
-    choiceElement.appendChild(pTagGenerator("No!", "damage", "choiceNo1()", "choice"));
+//<img></img>
+function imgReplace(sourcepara, klasse){
+    const imgC = document.createElement("img");
+    imgC.setAttribute("src", sourcepara);
+    imgC.setAttribute("class",klasse);
+    return imgC;
 }
+//const x = imgReplace("assets/imgages/a04b766cf4ed9374921b85a25fab74fb.jpg", "img-max-width"); 
+//ArtElement.appendChild(x);
 
 
-//?choice ja
+
+//choice ja
 function choiceYes1() {
     choiceElement.innerHTML = "";
     logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
+    choiceElement.appendChild(pTagGenerator("No!", "damage", "choiceNo1()", "choice"));
+    ArtElement.appendChild(imgGenerator("https://via.placeholder.com/150","x"))
+}
+
+function choiceNo1() {
+    choiceElement.innerHTML = "";
+    logElement.appendChild(pTagGenerator("No!", "damage", "", "log"));
     choiceElement.appendChild(pTagGenerator("No!", "damage", "choiceNo1()", "choice"));
     ArtElement.appendChild(imgGenerator("https://via.placeholder.com/150","x"))
 }
