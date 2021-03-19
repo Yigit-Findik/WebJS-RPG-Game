@@ -1,18 +1,22 @@
 #choice{
     background-color:red;
     height:200px;
+    color: white;
 }
 #log{
     background-color:red;
     height:250px;
+    color: white;
 }
 #art{
     background-color:red;
     height:350px;
+    color: whitesmoke;
 }
 #items{
     background-color:red;
     height:100px;
+    color: whitesmoke;
 }
 
 .bg_gray{

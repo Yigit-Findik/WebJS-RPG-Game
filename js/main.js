@@ -1,6 +1,7 @@
 var choiceElement = document.getElementById("choice");
 var logElement = document.getElementById("log");
 var ArtElement = document.getElementById("art");
+var ItemsElement = document.getElementById("items");
 
 //Onload startgame
 function startGame() {
@@ -52,14 +53,18 @@ function imgReplace(sourcepara, klasse){
 //choice ja
 function choiceYes1() {
     choiceElement.innerHTML = "";
+    ArtElement.innerHTML = "";
+    
     logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
-    choiceElement.appendChild(pTagGenerator("No!", "damage", "choiceNo1()", "choice"));
-    ArtElement.appendChild(imgGenerator("https://via.placeholder.com/150","x"))
+    choiceElement.appendChild(pTagGenerator("Yes!", "damage", "choiceYes1()", "choice"));
+    ArtElement.appendChild(imgReplace("assets/images/cafeIMP.jpg","x"))
 }
 
+//choice nee
 function choiceNo1() {
     choiceElement.innerHTML = "";
+    ArtElement.innerHTML = "";
     logElement.appendChild(pTagGenerator("No!", "damage", "", "log"));
     choiceElement.appendChild(pTagGenerator("No!", "damage", "choiceNo1()", "choice"));
-    ArtElement.appendChild(imgGenerator("https://via.placeholder.com/150","x"))
+    ArtElement.appendChild(imgReplace("assets/images/detroit.jpg","x"))
 }
