@@ -26,7 +26,12 @@
     color: white;
 }
 
+.imgSizeChanger {
+    width: 800px;
+    height: 350px;
+}
+
 #log{
-    overflow: scroll;
+    
     color: white;
 }

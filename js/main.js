@@ -7,6 +7,7 @@ var ItemsElement = document.getElementById("items");
 function startGame() {
 
     logElement.innerHTML = "Greetings Adventurer! What is your name?";
+    choiceElement.appendChild(inputGenerator("name", "inputClass","nameInput()", "choice"));
     choiceElement.appendChild(pTagGenerator("Yes!", "damage", "choiceYes1()", "choice"));
     choiceElement.appendChild(pTagGenerator("No!", "damage", "choiceNo1()", "choice"));
 }
@@ -30,6 +31,23 @@ function pTagGenerator(content, klasse, choice, logChoice){
     }
 }
 
+function inputGenerator(content, klasse, choice, logChoice){
+    if(logChoice == "log"){
+        const inputTag = document.createElement("input");
+        inputTag.textContent = content;
+        pTag.setAttribute("class", klasse);
+        return inputTag
+    }
+
+    else if(logChoice == "choice"){
+        const inputTag = document.createElement("input");
+        inputTag.textContent = content;
+        inputTag.setAttribute("class",klasse);
+        inputTag.setAttribute("onClick", choice);
+        return inputTag;
+    }
+}
+
 
 //imgGenerator functie
 function imgGenerator(source, klasse){
@@ -45,10 +63,12 @@ function imgReplace(sourcepara, klasse){
     imgC.setAttribute("class",klasse);
     return imgC;
 }
-//const x = imgReplace("assets/imgages/a04b766cf4ed9374921b85a25fab74fb.jpg", "img-max-width"); 
-//ArtElement.appendChild(x);
 
-
+function nameInput() {
+    logElement.appendChild(inputGenerator("Yigit", "nameClass", "", "log"));
+    choiceElement.appendChild(inputGenerator("next question", "klassee", "nameInput()", "choice"))
+    ArtElement.appendChild(imgReplace("assets/images/detroit.jpg","x"))
+}
 
 //choice ja
 function choiceYes1() {
@@ -57,14 +77,15 @@ function choiceYes1() {
     
     logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
     choiceElement.appendChild(pTagGenerator("Yes!", "damage", "choiceYes1()", "choice"));
-    ArtElement.appendChild(imgReplace("assets/images/cafeIMP.jpg","x"))
+    ArtElement.appendChild(imgReplace("assets/images/cafeIMP.jpg","imgSizeChanger"))
 }
 
 //choice nee
 function choiceNo1() {
     choiceElement.innerHTML = "";
     ArtElement.innerHTML = "";
+
     logElement.appendChild(pTagGenerator("No!", "damage", "", "log"));
     choiceElement.appendChild(pTagGenerator("No!", "damage", "choiceNo1()", "choice"));
-    ArtElement.appendChild(imgReplace("assets/images/detroit.jpg","x"))
+    ArtElement.appendChild(imgReplace("assets/images/detroit.jpg","imgSizeChanger"))
 }
