@@ -1,3 +1,4 @@
+//variables used for getting to their unique id's 
 var choiceElement = document.getElementById("choice");
 var logElement = document.getElementById("log");
 var ArtElement = document.getElementById("art");
