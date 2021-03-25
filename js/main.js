@@ -7,10 +7,11 @@ var ItemsElement = document.getElementById("items");
 //Onload startgame
 function startGame() {
 
-    logElement.innerHTML = "Greetings Adventurer! What is your name?";
+    logElement.innerHTML = "Greetings Saiyan! Are you ready for your adventure?";
     choiceElement.appendChild(inputGenerator("name", "inputClass","nameInput()", "choice"));
     choiceElement.appendChild(pTagGenerator("Yes!", "damage", "choiceYes1()", "choice"));
     choiceElement.appendChild(pTagGenerator("No!", "damage", "choiceNo1()", "choice"));
+    goldElement.appendChild(pTagGenerator("Gold: ", "goldClass","funct()", "log"));
 }
 
 //Paragraph tag generator
@@ -76,6 +77,8 @@ function choiceYes1() {
     choiceElement.innerHTML = "";
     ArtElement.innerHTML = "";
     
+    char1.hp = char1.hp - 5;
+    
     logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
     choiceElement.appendChild(pTagGenerator("Yes!", "damage", "choiceYes1()", "choice"));
     ArtElement.appendChild(imgReplace("assets/images/cafeIMP.jpg","imgSizeChanger"))
@@ -90,3 +93,12 @@ function choiceNo1() {
     choiceElement.appendChild(pTagGenerator("No!", "damage", "choiceNo1()", "choice"));
     ArtElement.appendChild(imgReplace("assets/images/detroit.jpg","imgSizeChanger"))
 }
+
+var char1 = {
+    id: 1,
+    naam: "Broly",
+    race: "Saiyan",
+    hp: 100
+}
+
+
