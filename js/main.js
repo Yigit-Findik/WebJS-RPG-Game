@@ -4,7 +4,8 @@ var logElement = document.getElementById("log");
 var ArtElement = document.getElementById("art");
 var ItemsElement = document.getElementById("items");
 
-//Onload startgame
+//*When game starts, these items getting loaded in.
+//TODO: Might aswell put the whole story with generators in here^^
 function startGame() {
 
     logElement.innerHTML = "Greetings Saiyan! Are you ready for your adventure?";
@@ -14,7 +15,7 @@ function startGame() {
     goldElement.appendChild(pTagGenerator("Gold: ", "goldClass","funct()", "log"));
 }
 
-//Paragraph tag generator
+//* Paragraph tag generator. Creates a p tag in either choice or log id(developer chooses where)
 function pTagGenerator(content, klasse, choice, logChoice){
     //var pTag = <p class="damage" onclick="choiceYes1()">Yes!</p>
     if(logChoice == "log"){
@@ -66,13 +67,14 @@ function imgReplace(sourcepara, klasse){
     return imgC;
 }
 
+//*input name choice
 function nameInput() {
     logElement.appendChild(inputGenerator("Yigit", "nameClass", "", "log"));
     choiceElement.appendChild(inputGenerator("next question", "klassee", "nameInput()", "choice"))
     ArtElement.appendChild(imgReplace("assets/images/detroit.jpg","x"))
 }
 
-//choice ja
+//*choice ja
 function choiceYes1() {
     choiceElement.innerHTML = "";
     ArtElement.innerHTML = "";
@@ -84,7 +86,7 @@ function choiceYes1() {
     ArtElement.appendChild(imgReplace("assets/images/cafeIMP.jpg","imgSizeChanger"))
 }
 
-//choice nee
+//*choice nee
 function choiceNo1() {
     choiceElement.innerHTML = "";
     ArtElement.innerHTML = "";
