@@ -42,6 +42,14 @@
     color: white;
 }
 
+.w-10 {
+    width: 25px;
+}
+
+.h-10 {
+    height: 25px;
+}
+
 html {
     font-family: 'Press Start 2P', cursive;
 }

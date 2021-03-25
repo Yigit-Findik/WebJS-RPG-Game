@@ -11,7 +11,8 @@ function startGame() {
     choiceElement.appendChild(inputGenerator("name", "inputClass","nameInput()", "choice"));
     choiceElement.appendChild(pTagGenerator("Yes!", "damage", "choiceYes1()", "choice"));
     choiceElement.appendChild(pTagGenerator("No!", "damage", "choiceNo1()", "choice"));
-    goldElement.appendChild(pTagGenerator("Gold: ", "goldClass","funct()", "log"));
+    ItemsElement.appendChild(pTagGenerator("Gold: ", "goldClass","funct()", "log"));
+    ItemsElement.appendChild(pTagGenerator("Inventory: ","InventoryClass", "funct()", "log"))
 }
 
 //* Paragraph tag generator. Creates a p tag in either choice or log id(developer chooses where)
@@ -33,6 +34,7 @@ function pTagGenerator(content, klasse, choice, logChoice){
     }
 }
 
+//* Creates an input field, (not fully working due having no buttons)
 function inputGenerator(content, klasse, choice, logChoice){
     if(logChoice == "log"){
         const inputTag = document.createElement("input");
@@ -50,7 +52,7 @@ function inputGenerator(content, klasse, choice, logChoice){
     }
 }
 
-//<img></img>
+//* Image Generator, use in a choice function. Not in onload
 function imgReplace(sourcepara, klasse){
     const imgC = document.createElement("img");
     imgC.setAttribute("src", sourcepara);
