@@ -7,7 +7,6 @@ var ItemsElement = document.getElementById("items");
 //*When game starts, these items getting loaded in.
 //TODO: Might aswell put the whole story with generators in here^^
 function startGame() {
-
     logElement.innerHTML = "Greetings Saiyan! Are you ready for your adventure?";
     choiceElement.appendChild(inputGenerator("name", "inputClass","nameInput()", "choice"));
     choiceElement.appendChild(pTagGenerator("Yes!", "damage", "choiceYes1()", "choice"));

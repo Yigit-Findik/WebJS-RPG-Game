@@ -27,11 +27,12 @@
 }
 
 .imgSizeChanger {
-    width: 800px;
-    height: 350px;
+    width: 200px;
+    height: auto;
+    margin-top: 15%;
 }
 
 #log{
-    
+    overflow: scroll;
     color: white;
 }
