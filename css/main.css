@@ -22,8 +22,13 @@
 .bg_gray{
     background-color:gainsboro;
 }
-.damage{
-    color: white;
+
+.damage {
+    color: black;
+}
+
+.black{
+    color: black;
 }
 
 .imgSizeChanger {
@@ -35,4 +40,8 @@
 #log{
     overflow: scroll;
     color: white;
+}
+
+html {
+    font-family: 'Press Start 2P', cursive;
 }

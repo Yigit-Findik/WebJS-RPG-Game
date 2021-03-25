@@ -50,14 +50,6 @@ function inputGenerator(content, klasse, choice, logChoice){
     }
 }
 
-
-//imgGenerator functie
-function imgGenerator(source, klasse){
-    const imgt = document.createElement("img");
-    imgt.setAttribute("class",source);
-    imgt.setAttribute("src", klasse);
-    return imgt;
-}
 //<img></img>
 function imgReplace(sourcepara, klasse){
     const imgC = document.createElement("img");
@@ -81,7 +73,7 @@ function choiceYes1() {
     char1.hp = char1.hp - 5;
     
     logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
-    choiceElement.appendChild(pTagGenerator("Yes!", "damage nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("Yes!", "black nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
     ArtElement.appendChild(imgReplace("assets/images/cafeIMP.jpg","imgSizeChanger"))
 }
 
