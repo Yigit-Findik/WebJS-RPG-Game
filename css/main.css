@@ -38,6 +38,10 @@
     margin-top: 15px;
 }
 
+.container-fluid {
+    background-color: lightgray;
+}
+
 .widthbig {
     width: 450px;
     background-color: white;
@@ -45,7 +49,8 @@
 
 .rowCLASS {
     margin-bottom: 15px;
-    margin-top: 15px;
+    margin-top: 45px;
+    margin-left: 210px;
 }
 
 .inventoryTOP {
@@ -82,4 +87,5 @@
 
 html {
     font-family: 'Press Start 2P', cursive;
+    background-color: lightgray;
 }
