@@ -1,22 +1,22 @@
 #choice{
-    background-color:red;
     height:200px;
     color: black;
 }
+
 #log{
-    background-color:red;
-    height:250px;
+    height: 250px;
+    overflow: scroll;
+    overflow-x: hidden;
     color: white;
 }
+
 #art{
-    background-color:red;
     height:350px;
-    color: whitesmoke;
 }
-#items{
-    background-color:red;
-    height:100px;
-    color: whitesmoke;
+
+.artBACKGROUND {
+    background-color: white;
+    color: black;
 }
 
 .bg_gray{
@@ -31,15 +31,32 @@
     color: black;
 }
 
+.widthIMG {
+    width: 500px;
+    margin-bottom: 20px;
+    margin-left: 110px;
+    margin-top: 15px;
+}
+
+.widthbig {
+    width: 450px;
+    background-color: white;
+}
+
+.rowCLASS {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.inventoryTOP {
+    margin-top: 30px;
+}
+
 .imgSizeChanger {
     width: 200px;
     height: auto;
-    margin-top: 15%;
-}
-
-#log{
-    overflow: scroll;
-    color: white;
+    margin-top: 7.5px;
+    margin-left: 115px;
 }
 
 .flex {
@@ -53,6 +70,10 @@
 
 .w-10 {
     width: 25px;
+}
+
+.ml-10 {
+    margin-left: 50px;
 }
 
 .h-10 {

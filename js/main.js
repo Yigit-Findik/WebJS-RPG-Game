@@ -2,7 +2,6 @@
 var choiceElement = document.getElementById("choice");
 var logElement = document.getElementById("log");
 var ArtElement = document.getElementById("art");
-var ItemsElement = document.getElementById("items");
 var GoldElement = document.getElementById("gold");
 var InventoryElement = document.getElementById("inventory");
 
@@ -11,8 +10,8 @@ var InventoryElement = document.getElementById("inventory");
 function startGame() {
     logElement.innerHTML = "Greetings Saiyan! Are you ready for your adventure?";
     choiceElement.appendChild(inputGenerator("name", "inputClass","nameInput()", "choice"));
-    choiceElement.appendChild(pTagGenerator("Yes!", "damage", "choiceYes1()", "choice"));
-    choiceElement.appendChild(pTagGenerator("No!", "damage", "choiceNo1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("Yes!", "damage nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("No!", "damage nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
 
 }
 
@@ -77,8 +76,8 @@ function choiceYes1() {
     GoldElement.innerHTML = GoldElement += 5;
     
     logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
-    choiceElement.appendChild(pTagGenerator("Yes!", "black nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
-    choiceElement.appendChild(pTagGenerator("No!", "black nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("Yes!", "nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("No!", "nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
     ArtElement.appendChild(imgReplace("assets/images/cafeIMP.jpg","imgSizeChanger"))
 }
 
@@ -88,8 +87,8 @@ function choiceNo1() {
     ArtElement.innerHTML = "";
 
     logElement.appendChild(pTagGenerator("No!", "damage", "", "log"));
-    choiceElement.appendChild(pTagGenerator("No!", "black nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
-    choiceElement.appendChild(pTagGenerator("Yes!", "black nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("No!", "nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("Yes!", "nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
     ArtElement.appendChild(imgReplace("assets/images/detroit.jpg","imgSizeChanger"))
 }
 
