@@ -3,6 +3,8 @@ var choiceElement = document.getElementById("choice");
 var logElement = document.getElementById("log");
 var ArtElement = document.getElementById("art");
 var ItemsElement = document.getElementById("items");
+var GoldElement = document.getElementById("gold");
+var InventoryElement = document.getElementById("inventory");
 
 //*When game starts, these items getting loaded in.
 //TODO: Might aswell put the whole story with generators in here^^
@@ -11,8 +13,7 @@ function startGame() {
     choiceElement.appendChild(inputGenerator("name", "inputClass","nameInput()", "choice"));
     choiceElement.appendChild(pTagGenerator("Yes!", "damage", "choiceYes1()", "choice"));
     choiceElement.appendChild(pTagGenerator("No!", "damage", "choiceNo1()", "choice"));
-    ItemsElement.appendChild(pTagGenerator("Gold: ", "goldClass","funct()", "log"));
-    ItemsElement.appendChild(pTagGenerator("Inventory: ","InventoryClass", "funct()", "log"))
+
 }
 
 //* Paragraph tag generator. Creates a p tag in either choice or log id(developer chooses where)
@@ -73,9 +74,11 @@ function choiceYes1() {
     ArtElement.innerHTML = "";
     
     char1.hp = char1.hp - 5;
+    GoldElement.innerHTML = GoldElement += 5;
     
     logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
-    choiceElement.appendChild(pTagGenerator("Yes!", "black nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("Yes!", "black nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("No!", "black nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
     ArtElement.appendChild(imgReplace("assets/images/cafeIMP.jpg","imgSizeChanger"))
 }
 
@@ -85,7 +88,8 @@ function choiceNo1() {
     ArtElement.innerHTML = "";
 
     logElement.appendChild(pTagGenerator("No!", "damage", "", "log"));
-    choiceElement.appendChild(pTagGenerator("No!", "damage", "choiceNo1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("No!", "black nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("Yes!", "black nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
     ArtElement.appendChild(imgReplace("assets/images/detroit.jpg","imgSizeChanger"))
 }
 
