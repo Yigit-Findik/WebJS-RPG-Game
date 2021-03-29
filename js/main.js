@@ -72,9 +72,11 @@ function choiceYes1() {
     choiceElement.innerHTML = "";
     ArtElement.innerHTML = "";
     
-    char1.hp = char1.hp - 5;
-    GoldElement.innerHTML = GoldElement += 5;
-    
+    //char1.hp = char1.hp - 5;
+    //GoldElement.innerHTML = GoldElement += 5;
+
+    logElement.scrollTop = logElement.scrollHeight;
+
     logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
     choiceElement.appendChild(pTagGenerator("Yes!", "nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
     choiceElement.appendChild(pTagGenerator("No!", "nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
@@ -85,6 +87,8 @@ function choiceYes1() {
 function choiceNo1() {
     choiceElement.innerHTML = "";
     ArtElement.innerHTML = "";
+
+    logElement.scrollTop = logElement.scrollHeight;
 
     logElement.appendChild(pTagGenerator("No!", "damage", "", "log"));
     choiceElement.appendChild(pTagGenerator("No!", "nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
