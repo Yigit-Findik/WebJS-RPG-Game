@@ -5,6 +5,7 @@ var ArtElement = document.getElementById("art");
 var GoldElement = document.getElementById("gold");
 var InventoryElement = document.getElementById("inventory");
 
+
 //*When game starts, these items getting loaded in.
 //TODO: Might aswell put the whole story with generators in here^^
 function startGame() {
@@ -73,7 +74,9 @@ function choiceYes1() {
     ArtElement.innerHTML = "";
     
     //char1.hp = char1.hp - 5;
-    //GoldElement.innerHTML = GoldElement += 5;
+
+    parseInt("5") = 5;
+    GoldElement.innerHTML = GoldElement += 5;
 
     logElement.scrollTop = logElement.scrollHeight;
 
