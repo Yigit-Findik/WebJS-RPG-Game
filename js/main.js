@@ -63,18 +63,17 @@ function imgReplace(sourcepara, klasse){
 //*input name choice
 function nameInput() {
     logElement.appendChild(inputGenerator("Yigit", "nameClass", "", "log"));
-    choiceElement.appendChild(inputGenerator("next question", "nes-input", "nameInput()", "choice"))
+    choiceElement.appendChild(inputGenerator("next question", "klassee", "nameInput()", "choice"))
     ArtElement.appendChild(imgReplace("assets/images/detroit.jpg","x"))
 }
 
-
-var amount = 0;
 //*choice ja
 function choiceYes1() {
     choiceElement.innerHTML = "";
     ArtElement.innerHTML = "";
     
-    document.getElementById("gold").innerHTML = amount + 5;
+    char1.hp = char1.hp - 5;
+    GoldElement.innerHTML = GoldElement += 5;
     
     logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
     choiceElement.appendChild(pTagGenerator("Yes!", "nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
