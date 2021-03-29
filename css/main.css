@@ -20,7 +20,7 @@
 }
 
 .bg_gray{
-    background-color:gainsboro;
+    background-color: gainsboro;
 }
 
 .damage {
@@ -45,6 +45,15 @@
 .widthbig {
     width: 450px;
     background-color: white;
+}
+
+.dispfluid {
+    width: auto;
+}
+
+.tableplacement {
+    padding-top: 50px;
+    margin-left: 30%;
 }
 
 .rowCLASS {
