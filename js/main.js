@@ -12,6 +12,23 @@ var playerStats = {
     name: ''
 }
 
+//object characters
+var char1 = {
+    id: 1,
+    name: "Broly",
+    race: "Saiyan",
+    hp: 100,
+    powerlevel: 30000
+}
+
+var char2 = {
+    id: 0,
+    name: "Gohan",
+    race: "Saiyan",
+    hp: 77,
+    powerlevel: 12000
+}
+
 
 //*When game starts, these items getting loaded in.
 //TODO: Might aswell put the whole story with generators in here^^
@@ -107,12 +124,3 @@ function choiceNo1() {
     choiceElement.appendChild(pTagGenerator("Yes!", "nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
     ArtElement.appendChild(imgReplace("assets/images/detroit.jpg","imgSizeChanger"))
 }
-
-var char1 = {
-    id: 1,
-    naam: "Broly",
-    race: "Saiyan",
-    hp: 100
-}
-
-
