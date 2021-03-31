@@ -8,7 +8,7 @@ var PowerElement = document.getElementById("power");
 //object voor inv en gold
 var playerStats = {
     gold: 0,
-    power: [],
+    power: 0,
     name: ''
 }
 
@@ -29,6 +29,8 @@ var char2 = {
     powerlevel: 12000
 }
 
+playerStats.power = char1.powerlevel + char2.powerlevel
+PowerElement.innerHTML = playerStats.power;
 
 //*When game starts, these items getting loaded in.
 //TODO: Might aswell put the whole story with generators in here^^
