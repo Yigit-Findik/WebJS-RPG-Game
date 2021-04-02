@@ -13,28 +13,51 @@ var playerStats = {
 }
 
 //object characters
+
+var table = document.getElementById("myTable");
+var row = table.insertRow(0);
+var cell1 = row.insertCell(0);
+var cell2 = row.insertCell(1);
+var cell3 = row.insertCell(2);
+var cell4 = row.insertCell(3);
+var cell5 = row.insertCell(4);
+
+var characters = [
+    char1 = {
+        id: 1,
+        name: "Broly",
+        race: "Saiyan",
+        hp: 100,
+        ki: 200,
+        powerlevel: 30000
+    },
+
+    char2 = {
+        id: 2,
+        name: "Vegeta",
+        race: "Saiyan",
+        hp: 500,
+        ki: 900,
+        powerlevel: 5000
+    },
+    
+    char3 = {
+        id: 3,
+        name: "Yigit",
+        race: "Findik",
+        hp: 10,
+        ki: 24,
+        powerlevel: 1
+    }
+]
 /*
-var char1 = {
-    id: 1,
-    name: "Broly",
-    race: "Saiyan",
-    hp: 100,
-    ki: 200,
-    powerlevel: 30000
+for(a = 0; a < characters.length; a++) {
+    playerStats.power = characters[a.powerlevel]; 
 }
-
-var char2 = {
-    id: 2,
-    name: "Gohan",
-    race: "Saiyan",
-    hp: 77,
-    ki: 200,
-    powerlevel: 12000
-}
-
+PowerElement.innerHTML = playerStats.power;  
 */
-//playerStats.power = char1.powerlevel + char2.powerlevel
-//PowerElement.innerHTML = playerStats.power;
+playerStats.power = char1.powerlevel + char2.powerlevel + char3.powerlevel;
+PowerElement.innerHTML = playerStats.power;
 
 //*When game starts, these items getting loaded in.
 //TODO: Might aswell put the whole story with generators in here^^
@@ -43,7 +66,6 @@ function startGame() {
     choiceElement.appendChild(inputGenerator("name", "inputClass","nameInput()", "choice"));
     choiceElement.appendChild(pTagGenerator("Yes!", "damage nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
     choiceElement.appendChild(pTagGenerator("No!", "damage nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
-
 }
 
 //* Paragraph tag generator. Creates a p tag in either choice or log id(developer chooses where)
@@ -107,43 +129,6 @@ function choiceYes1() {
     playerStats.gold += 5;
     GoldElement.innerHTML = playerStats.gold;
 
-    var table = document.getElementById("myTable");
-    var row = table.insertRow(0);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
-    var cell5 = row.insertCell(4);
-    
-    var characters = [
-        char1 = {
-            id: 1,
-            name: "Broly",
-            race: "Saiyan",
-            hp: 100,
-            ki: 200,
-            powerlevel: 30000
-        },
-
-        char2 = {
-            id: 2,
-            name: "Vegeta",
-            race: "Saiyan",
-            hp: 500,
-            ki: 900,
-            powerlevel: 5000
-        },
-        
-        char3 = {
-            id: 3,
-            name: "Yigit",
-            race: "Findik",
-            hp: 10,
-            ki: 24,
-            powerlevel: 1
-        }
-    ]
-
     for (i = 0; i < characters.length; i++) {
         cell1.innerHTML = characters[i].id;
         cell2.innerHTML = characters[i].name;
@@ -151,7 +136,6 @@ function choiceYes1() {
         cell4.innerHTML = characters[i].hp;
         cell5.innerHTML = characters[i].ki;
         console.log(characters[i])
-
     }
 
     logElement.scrollTop = logElement.scrollHeight;
