@@ -103,7 +103,19 @@ function choiceYes1() {
     playerStats.gold += 5;
     GoldElement.innerHTML = playerStats.gold;
 
-
+    var table = document.getElementById("myTable");
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    cell1.innerHTML = char1.id;
+    cell2.innerHTML = char1.name;
+    cell2.innerHTML = char1.race;
+    cell3.innerHTML = char1.hp;
+    cell4.innerHTML = "NEW CELL5";
+    cell5.innerHTML = "NEW CELL6";
 
     logElement.scrollTop = logElement.scrollHeight;
     logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
