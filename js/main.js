@@ -13,6 +13,7 @@ var playerStats = {
 }
 
 //object characters
+/*
 var char1 = {
     id: 1,
     name: "Broly",
@@ -23,7 +24,7 @@ var char1 = {
 }
 
 var char2 = {
-    id: 0,
+    id: 2,
     name: "Gohan",
     race: "Saiyan",
     hp: 77,
@@ -31,8 +32,9 @@ var char2 = {
     powerlevel: 12000
 }
 
-playerStats.power = char1.powerlevel + char2.powerlevel
-PowerElement.innerHTML = playerStats.power;
+*/
+//playerStats.power = char1.powerlevel + char2.powerlevel
+//PowerElement.innerHTML = playerStats.power;
 
 //*When game starts, these items getting loaded in.
 //TODO: Might aswell put the whole story with generators in here^^
@@ -112,11 +114,45 @@ function choiceYes1() {
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
     var cell5 = row.insertCell(4);
-    cell1.innerHTML = char1.id;
-    cell2.innerHTML = char1.name;
-    cell3.innerHTML = char1.race;
-    cell4.innerHTML = char1.hp;
-    cell5.innerHTML = char1.ki;
+    
+    var characters = [
+        char1 = {
+            id: 1,
+            name: "Broly",
+            race: "Saiyan",
+            hp: 100,
+            ki: 200,
+            powerlevel: 30000
+        },
+
+        char2 = {
+            id: 2,
+            name: "Vegeta",
+            race: "Saiyan",
+            hp: 500,
+            ki: 900,
+            powerlevel: 5000
+        },
+        
+        char3 = {
+            id: 3,
+            name: "Yigit",
+            race: "Findik",
+            hp: 10,
+            ki: 24,
+            powerlevel: 1
+        }
+    ]
+
+    for (i = 0; i < characters.length; i++) {
+        cell1.innerHTML = characters[i].id;
+        cell2.innerHTML = characters[i].name;
+        cell3.innerHTML = characters[i].race;
+        cell4.innerHTML = characters[i].hp;
+        cell5.innerHTML = characters[i].ki;
+        console.log(characters[i])
+
+    }
 
     logElement.scrollTop = logElement.scrollHeight;
     logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
