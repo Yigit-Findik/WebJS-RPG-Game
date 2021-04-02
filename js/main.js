@@ -18,6 +18,7 @@ var char1 = {
     name: "Broly",
     race: "Saiyan",
     hp: 100,
+    ki: 200,
     powerlevel: 30000
 }
 
@@ -26,6 +27,7 @@ var char2 = {
     name: "Gohan",
     race: "Saiyan",
     hp: 77,
+    ki: 200,
     powerlevel: 12000
 }
 
@@ -112,10 +114,9 @@ function choiceYes1() {
     var cell5 = row.insertCell(4);
     cell1.innerHTML = char1.id;
     cell2.innerHTML = char1.name;
-    cell2.innerHTML = char1.race;
-    cell3.innerHTML = char1.hp;
-    cell4.innerHTML = "NEW CELL5";
-    cell5.innerHTML = "NEW CELL6";
+    cell3.innerHTML = char1.race;
+    cell4.innerHTML = char1.hp;
+    cell5.innerHTML = char1.ki;
 
     logElement.scrollTop = logElement.scrollHeight;
     logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
