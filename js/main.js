@@ -15,12 +15,7 @@ var playerStats = {
 //object characters
 
 var table = document.getElementById("myTable");
-var row = table.insertRow(0);
-var cell1 = row.insertCell(0);
-var cell2 = row.insertCell(1);
-var cell3 = row.insertCell(2);
-var cell4 = row.insertCell(3);
-var cell5 = row.insertCell(4);
+
 
 var characters = [
     char1 = {
@@ -60,7 +55,7 @@ playerStats.power = char1.powerlevel + char2.powerlevel + char3.powerlevel;
 PowerElement.innerHTML = playerStats.power;
 
 //*When game starts, these items getting loaded in.
-//TODO: Might aswell put the whole story with generators in here^^
+//!TODO: Might aswell put the whole story with generators in here^^
 function startGame() {
     logElement.innerHTML = "Greetings Saiyan! Are you ready for your adventure?";
     choiceElement.appendChild(inputGenerator("name", "inputClass","nameInput()", "choice"));
@@ -129,7 +124,26 @@ function choiceYes1() {
     playerStats.gold += 5;
     GoldElement.innerHTML = playerStats.gold;
 
+    replaceTable()
+
+    logElement.scrollTop = logElement.scrollHeight;
+    logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
+    choiceElement.appendChild(pTagGenerator("Yes!", "nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("No!", "nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
+    ArtElement.appendChild(imgReplace("assets/images/cafeIMP.jpg","imgSizeChanger"))
+}
+
+//replace table 
+function replaceTable() {
     for (i = 0; i < characters.length; i++) {
+        //table.innerHTML = '';
+    
+        var row = table.insertRow(i);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
         cell1.innerHTML = characters[i].id;
         cell2.innerHTML = characters[i].name;
         cell3.innerHTML = characters[i].race;
@@ -137,12 +151,6 @@ function choiceYes1() {
         cell5.innerHTML = characters[i].ki;
         console.log(characters[i])
     }
-
-    logElement.scrollTop = logElement.scrollHeight;
-    logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
-    choiceElement.appendChild(pTagGenerator("Yes!", "nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
-    choiceElement.appendChild(pTagGenerator("No!", "nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
-    ArtElement.appendChild(imgReplace("assets/images/cafeIMP.jpg","imgSizeChanger"))
 }
 
 //*choice nee
