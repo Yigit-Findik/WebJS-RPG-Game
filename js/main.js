@@ -50,8 +50,8 @@ PowerElement.innerHTML = playerStats.power;
 //!TODO: Might aswell put the whole story with generators in here^^
 function startGame() {
     logElement.innerHTML = "Greetings Saiyan! Whats your name?";
-    //choiceElement.appendChild(pTagGenerator("Yes!", "damage nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
-    //choiceElement.appendChild(pTagGenerator("No!", "damage nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("Yes!", "damage nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("No!", "damage nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
 }
 
 //* Paragraph tag generator. Creates a p tag in either choice or log id(developer chooses where)
