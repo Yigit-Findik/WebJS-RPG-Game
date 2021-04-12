@@ -43,12 +43,17 @@
 }
 
 .rowCLASS {
-    margin-bottom: 15px;
-    margin-top: 15px;
+    
+    margin-top: 22.5px;
+}
+
+.blue {
+    color: rgb(138, 138, 241);
 }
 
 .inventoryTOP {
     margin-top: 30px;
+    padding-left: 600px;
 }
 
 .imgSizeChanger {
@@ -56,6 +61,12 @@
     height: auto;
     margin-top: 7.5px;
     margin-left: 115px;
+}
+
+.welcomeIMG {
+    width: 70%;
+    height: 100%;
+    margin-left: 15%;
 }
 
 .flex {

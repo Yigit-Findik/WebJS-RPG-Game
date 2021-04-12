@@ -13,10 +13,7 @@ var playerStats = {
 }
 
 //object characters
-
 var table = document.getElementById("myTable");
-
-
 var characters = [
     char1 = {
         id: 1,
@@ -45,22 +42,16 @@ var characters = [
         powerlevel: 1
     }
 ]
-/*
-for(a = 0; a < characters.length; a++) {
-    playerStats.power = characters[a.powerlevel]; 
-}
-PowerElement.innerHTML = playerStats.power;  
-*/
+
 playerStats.power = char1.powerlevel + char2.powerlevel + char3.powerlevel;
 PowerElement.innerHTML = playerStats.power;
 
 //*When game starts, these items getting loaded in.
 //!TODO: Might aswell put the whole story with generators in here^^
 function startGame() {
-    logElement.innerHTML = "Greetings Saiyan! Are you ready for your adventure?";
-    choiceElement.appendChild(inputGenerator("name", "inputClass","nameInput()", "choice"));
-    choiceElement.appendChild(pTagGenerator("Yes!", "damage nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
-    choiceElement.appendChild(pTagGenerator("No!", "damage nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
+    logElement.innerHTML = "Greetings Saiyan! Whats your name?";
+    //choiceElement.appendChild(pTagGenerator("Yes!", "damage nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
+    //choiceElement.appendChild(pTagGenerator("No!", "damage nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
 }
 
 //* Paragraph tag generator. Creates a p tag in either choice or log id(developer chooses where)
@@ -82,24 +73,6 @@ function pTagGenerator(content, klasse, choice, logChoice){
     }
 }
 
-//* Creates an input field, (not fully working due having no buttons)
-function inputGenerator(content, klasse, choice, logChoice){
-    if(logChoice == "log"){
-        const inputTag = document.createElement("input");
-        inputTag.textContent = content;
-        pTag.setAttribute("class", klasse);
-        return inputTag
-    }
-
-    else if(logChoice == "choice"){
-        const inputTag = document.createElement("input");
-        inputTag.textContent = content;
-        inputTag.setAttribute("class",klasse);
-        inputTag.setAttribute("onClick", choice);
-        return inputTag;
-    }
-}
-
 //* Image Generator, use in a choice function. Not in onload
 function imgReplace(sourcepara, klasse){
     const imgC = document.createElement("img");
@@ -108,36 +81,13 @@ function imgReplace(sourcepara, klasse){
     return imgC;
 }
 
-//*input name choice
-function nameInput() {
-    logElement.appendChild(inputGenerator("Yigit", "nameClass", "", "log"));
-    choiceElement.appendChild(inputGenerator("next question", "klassee", "nameInput()", "choice"))
-    ArtElement.appendChild(imgReplace("assets/images/detroit.jpg","x"))
-}
 
-//*choice ja
-function choiceYes1() {
-    choiceElement.innerHTML = "";
-    ArtElement.innerHTML = "";
-    
-    //char1.hp = char1.hp - 5;
-    playerStats.gold += 5;
-    GoldElement.innerHTML = playerStats.gold;
 
-    replaceTable()
-
-    logElement.scrollTop = logElement.scrollHeight;
-    logElement.appendChild(pTagGenerator("Yes!", "damage", "", "log"));
-    choiceElement.appendChild(pTagGenerator("Yes!", "nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
-    choiceElement.appendChild(pTagGenerator("No!", "nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
-    ArtElement.appendChild(imgReplace("assets/images/cafeIMP.jpg","imgSizeChanger"))
-}
-
-//replace table 
+//*replace table 
 function replaceTable() {
+    table.innerHTML = '';
     for (i = 0; i < characters.length; i++) {
         //table.innerHTML = '';
-    
         var row = table.insertRow(i);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
@@ -153,6 +103,26 @@ function replaceTable() {
     }
 }
 
+//*choice ja
+function choiceYes1() {
+    choiceElement.innerHTML = "";
+    ArtElement.innerHTML = "";
+    replaceTable()
+
+    playerStats.gold += 5;
+    GoldElement.innerHTML = playerStats.gold;
+
+    characters[0].hp -= 5;
+    characters[1].hp -= 5;
+    characters[2].hp -= 5;
+
+    logElement.scrollTop = logElement.scrollHeight;
+    logElement.appendChild(pTagGenerator("Yes!", "blue", "", "log"));
+    choiceElement.appendChild(pTagGenerator("Yes!", "nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
+    choiceElement.appendChild(pTagGenerator("No!", "nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
+    ArtElement.appendChild(imgReplace("assets/images/cafeIMP.jpg","imgSizeChanger"))
+}
+
 //*choice nee
 function choiceNo1() {
     choiceElement.innerHTML = "";
@@ -162,7 +132,7 @@ function choiceNo1() {
     GoldElement.innerHTML = playerStats.gold;
 
     logElement.scrollTop = logElement.scrollHeight;
-    logElement.appendChild(pTagGenerator("No!", "damage", "", "log"));
+    logElement.appendChild(pTagGenerator("No!", "blue", "", "log"));
     choiceElement.appendChild(pTagGenerator("No!", "nes-balloon from-left nes-pointer", "choiceNo1()", "choice"));
     choiceElement.appendChild(pTagGenerator("Yes!", "nes-balloon from-left nes-pointer", "choiceYes1()", "choice"));
     ArtElement.appendChild(imgReplace("assets/images/detroit.jpg","imgSizeChanger"))
