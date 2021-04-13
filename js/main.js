@@ -17,11 +17,11 @@ var table = document.getElementById("myTable");
 var characters = [
     char1 = {
         id: 1,
-        name: "Broly",
+        name: "Gohan",
         race: "Saiyan",
-        hp: 100,
-        ki: 200,
-        powerlevel: 30000
+        hp: 2,
+        ki: 2000,
+        powerlevel: 10000
     },
 
     char2 = {
@@ -39,7 +39,7 @@ var characters = [
         race: "Findik",
         hp: 10,
         ki: 24,
-        powerlevel: 1
+        powerlevel: 20
     }
 ]
 
@@ -94,11 +94,13 @@ function replaceTable() {
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
         var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
         cell1.innerHTML = characters[i].id;
         cell2.innerHTML = characters[i].name;
         cell3.innerHTML = characters[i].race;
         cell4.innerHTML = characters[i].hp;
         cell5.innerHTML = characters[i].ki;
+        cell6.innerHTML = characters[i].powerlevel;
         console.log(characters[i])
     }
 }
